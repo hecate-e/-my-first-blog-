@@ -7,16 +7,13 @@
             <h1><a href=""><em>Este blog es de Ana y no tuyo</em></a><h1>
         </div>
 
-        <div>
-            <p>published: 27.02.2016</p>
-            <h2><a href="">Mi primer post</a></h2>
-            <p>Bienvenido a Ana´s world</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaks }}</p>
+            </div>
+        {% endfor %}
 
-        <div>
-            <p>published: 27.02.2016</p>
-            <h2><a href="">My segundo post</a></h2>
-            <p>Adiós de Ana´s world</p>
-        </div>
     </body>
 </html>
